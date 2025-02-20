@@ -1,0 +1,55 @@
+// C++ code
+//
+//Dar nome aos pino (conector de energia, porta de entrada e saida de sinal eletronico) 
+#define pinLedVermelho 11 
+#define pinLedAmarelo 12 
+#define pinLedVerde 13
+
+#define pinLedVermelho2 8 
+#define pinLedAmarelo2 9 
+#define pinLedVerde2 10
+
+#define tempoLedVermelho 5000
+#define tempoLedAmarelo 2000
+#define tempoLedVerde 3000
+
+
+void setup()
+{//Vai entrar ou sair
+  pinMode(pinLedVermelho, OUTPUT);
+  pinMode(pinLedAmarelo, OUTPUT);
+  pinMode(pinLedVerde, OUTPUT);
+  pinMode(pinLedVermelho2, OUTPUT);
+  pinMode(pinLedAmarelo2, OUTPUT);
+  pinMode(pinLedVerde2, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(pinLedVerde, HIGH);
+  digitalWrite(pinLedVermelho2, HIGH);
+  digitalWrite(pinLedVermelho, LOW);		
+  digitalWrite(pinLedAmarelo2, LOW);
+  
+  delay(tempoLedVerde);	
+  
+  digitalWrite(pinLedVerde, LOW);	
+  digitalWrite(pinLedAmarelo, HIGH);
+  
+  delay(tempoLedAmarelo);
+  
+  digitalWrite(pinLedAmarelo, LOW);		
+  digitalWrite(pinLedVermelho2, LOW);
+  digitalWrite(pinLedVerde2, HIGH);
+  digitalWrite(pinLedVermelho, HIGH);
+  
+  delay(tempoLedVermelho);			
+  
+  digitalWrite(pinLedVerde2, LOW);
+  digitalWrite(pinLedAmarelo2, HIGH);
+  
+  delay(tempoLedAmarelo);
+  
+  digitalWrite(pinLedVermelho, LOW);		
+  digitalWrite(pinLedAmarelo2, LOW);
+}				

@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> <!-- Define o idioma da página como Português -->
+<head>
+    <meta charset="UTF-8"> <!-- UTF-8 suporta acentuação e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Se adapta para diferentes tamanhos de tela -->
+    <title>Calculadora</title> <!-- Define o título da página, que aparece na aba do navegador -->
+</head>
+<body>
+
+    <h2>Calculadora Simples</h2> <!-- Título principal da página, visível no conteúdo da página -->
+
+    <!-- Formulário que contém a estrutura da calculadora -->
+    <form name="calculadora">
+        <!-- Caixa de texto onde os resultados e números digitados serão exibidos -->
+        <input type="text" name="display" id="display" disabled>
+        <br> <!-- Quebra de linha -->
+        <!-- Botões da calculadora (números e operadores) -->
+        <button type="button" onclick="adicionar('1')">1</button> <!-- Type="button" - Especifica que apenas executará uma ação quando clicado. 		  -->
+        <button type="button" onclick="adicionar('2')">2</button> <!-- 	onclick="nomeDaFuncao()" - Define uma ação para o botão: quando clicado, ele chama a função -->
+        <button type="button" onclick="adicionar('3')">3</button> <!--  JavaScript.					 					  -->
+        <button type="button" onclick="adicionar('+')">+</button> <!-- 	('1') - O texto que será exibido dentro do botão, neste caso. 				  -->
+        <br>
+        <button type="button" onclick="adicionar('4')">4</button>
+        <button type="button" onclick="adicionar('5')">5</button>
+        <button type="button" onclick="adicionar('6')">6</button>
+        <button type="button" onclick="adicionar('-')">-</button>
+        <br>
+        <button type="button" onclick="adicionar('7')">7</button>
+        <button type="button" onclick="adicionar('8')">8</button>
+        <button type="button" onclick="adicionar('9')">9</button>
+        <button type="button" onclick="adicionar('*')">*</button>
+        <br>
+        <button type="button" onclick="adicionar('0')">0</button>
+        <button type="button" onclick="adicionar('.')">.</button>
+        <button type="button" onclick="calcular()">=</button>
+        <button type="button" onclick="adicionar('/')">/</button>
+        <br>
+        <button type="button" onclick="limpar()">C</button>
+    </form>
+
+    <script>
+        // Função que adiciona um valor (número ou operador) ao display
+        function adicionar(valor) {
+            document.calculadora.display.value += valor; // Acessa o campo 'display' do formulário e adiciona o valor clicado
+        }
+
+        // Função que realiza o cálculo da expressão no display
+        function calcular() {
+            try {
+                // Utiliza a função 'eval' para calcular a expressão matemática no display
+                document.calculadora.display.value = eval(document.calculadora.display.value);
+            } catch (e) {
+                // Caso haja um erro na expressão, exibe a palavra 'Erro' no display
+                document.calculadora.display.value = 'Erro';
+            }
+        }
+
+        // Função que limpa o conteúdo do display
+        function limpar() {
+            document.calculadora.display.value = ''; // Atualiz o display para um espaço vazio
+        }
+    </script>
+
+</body>
+</html>
