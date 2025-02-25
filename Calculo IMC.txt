@@ -1,0 +1,31 @@
+// C++ code
+//
+
+float peso = 60;
+float altura = 1.65;
+float IMC = 0;
+
+void setup()
+{
+	Serial.begin (9600);
+  	Serial.print("peso ");
+    Serial.print(peso);
+    Serial.println("kg ");
+    Serial.print("altura ");
+    Serial.print(altura);
+    Serial.println("m ");
+  	IMC = peso/pow(altura, 2);
+    Serial.print("IMC ");
+    Serial.println(IMC);
+  	if (IMC < 18) 
+    {Serial.println("Abaixo do peso");}
+  	else if(IMC >= 18 & IMC <= 25)
+    {Serial.println("Normal");}
+  	else if(IMC > 25) 
+    {Serial.println("Ta gordo");}
+}
+
+void loop()
+{
+
+}
