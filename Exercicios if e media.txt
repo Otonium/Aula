@@ -4,13 +4,10 @@ float sal = 0;
 float sal2 = 0;
 
 float mediaAluno1;
-float mediaAluno2;
-float mediaAluno3;
-float mediaAluno4;
 
-float nota1;
-float nota2;
-float nota3;
+int nota1=1;
+int nota2=2;
+int nota3=3;
 
 void setup()
 {
@@ -41,7 +38,11 @@ void setup()
   }
   
   //media
-  
+  Serial.println(nota1); 
+  Serial.println(nota2); 
+  Serial.println(nota3);
+  mediaAluno1 = (nota1 + nota2 + nota3) / 3;
+    Serial.print(mediaAluno1);
 }
   
 
