@@ -1,0 +1,51 @@
+// C++ code
+int numero = 1;
+float sal = 0;
+float sal2 = 0;
+
+float mediaAluno1;
+float mediaAluno2;
+float mediaAluno3;
+float mediaAluno4;
+
+float nota1;
+float nota2;
+float nota3;
+
+void setup()
+{
+  Serial.begin(9600);
+  
+  if(numero < 0) {
+    Serial.println("Negativo");
+  } else {
+    Serial.println("Positivo");
+  }
+  
+  if(sal < 1000) {
+    sal = sal + (10/100 * sal);
+    Serial.print("Salario reajustado: ");
+    Serial.println(sal);
+  }
+  
+  if(sal < 500) {
+    sal = sal + (30/100 * sal);
+    Serial.print("Salario reajustado: ");
+    Serial.println(sal);
+  }
+  
+  if(sal > sal2) {
+    Serial.println("Salario maior");
+  } else {
+    Serial.println("Salario menor");
+  }
+  
+  //media
+  
+}
+  
+
+void loop()
+{
+  
+}
